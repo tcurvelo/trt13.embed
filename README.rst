@@ -1,13 +1,10 @@
 trt13.portal.embedvideo
-*******************************************************************************
-.. contents::
-   :depth: 2
-
-
-Panorama
-========
+=======================
 
 Provê conteúdo para vídeos embarcados (ex: mms://)
+
+.. contents:: Sumário
+   :depth: 2
 
 
 Instalação e configuração
@@ -35,3 +32,9 @@ BUG's conhecidos
 
 Roadmap
 =======
+
+* v0.1
+
+  * Tipo de conteudo `Video Embarcado`, para videos/streams externos
+  * `Video Embarcado` pode ter várias `alternativas` (ex: dimensoes/qualidades
+    diferentes) acessiveis por URL própria, ou alternando via AJAX.
