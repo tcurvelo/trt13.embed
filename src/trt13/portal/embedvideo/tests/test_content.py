@@ -25,9 +25,10 @@ class TestContent(unittest.TestCase):
     def test_adding(self):
         api.content.create(
             type='trt13.portal.embedvideo.video',
-            title=u'Motörhead',
+            title=u"Motörhead",
             container=self.folder
         )
         v1 = self.folder['motorhead']
         self.assertTrue(video.IVideo.providedBy(v1))
-        self.assertEquals(u'Motörhead',  v1.title)
+        self.assertEquals(u"Motörhead",  v1.title)
+

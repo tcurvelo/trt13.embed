@@ -37,7 +37,12 @@ setup(name='trt13.portal.embedvideo',
           'plone.api',
           'plone.app.dexterity[grok]',
       ],
-      extras_require={'test': ['plone.app.testing']},
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'plone.app.robotframework',
+          ]
+      },
       entry_points="""
           [z3c.autoinclude.plugin]
           target = plone

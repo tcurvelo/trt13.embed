@@ -1,6 +1,9 @@
-from plone.app.testing import PloneWithPackageLayer
-from plone.app.testing import IntegrationTesting
+from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
+from plone.app.testing import IntegrationTesting
+from plone.app.testing import PloneWithPackageLayer
+from plone.testing import z2
+
 
 import trt13.portal.embedvideo
 
@@ -16,5 +19,5 @@ TRT13_PORTAL_EMBEDVIDEO_INTEGRATION = IntegrationTesting(
     name="TRT13_PORTAL_EMBEDVIDEO_INTEGRATION")
 
 TRT13_PORTAL_EMBEDVIDEO_FUNCTIONAL = FunctionalTesting(
-    bases=(TRT13_PORTAL_EMBEDVIDEO, ),
+    bases=(AUTOLOGIN_LIBRARY_FIXTURE, TRT13_PORTAL_EMBEDVIDEO, z2.ZSERVER),
     name="TRT13_PORTAL_EMBEDVIDEO_FUNCTIONAL")
