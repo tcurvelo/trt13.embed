@@ -4,6 +4,7 @@
 *.pyo
 *~
 
+.codeintel/
 .hg/
 .settings/
 bin/
