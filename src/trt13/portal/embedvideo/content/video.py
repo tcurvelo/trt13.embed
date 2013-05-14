@@ -23,3 +23,8 @@ class IVideo(form.Schema):
     mimetype = schema.TextLine(
         title=_(u"Mimetype"),
     )
+
+
+class View(grok.View):
+    grok.context(IVideo)
+    grok.require("zope2.View")
