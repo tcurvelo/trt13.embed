@@ -7,16 +7,19 @@ from zope import schema
 
 class IVideo(form.Schema):
     """A embedded video"""
-    pass
-    # parameters = schema.TextLine(
-    #     title=_(u"URL parameters"),
-    #     description=_(u"URL parameters string (after '?')")
-    # )
 
-    # height = schema.Int(
-    #     title=_(u"Height"),
-    # )
+    height = schema.Int(
+        title=_(u"Height"),
+    )
 
-    # width = schema.Int(
-    #     title=_(u"Width"),
-    # )
+    width = schema.Int(
+        title=_(u"Width"),
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+    )
+
+    mimetype = schema.TextLine(
+        title=_(u"Mimetype"),
+    )

@@ -13,14 +13,14 @@ Video Embarcado aparece como adicionável
      When Open Add New Menu
      Then Element should be visible  trt13-portal-embedvideo-video
 
-Checa os campos do formulpario de Video Embarcado
+Checa os campos do formulário de Video Embarcado
     Abre formulário de criação de video
-    Element should be visible  title
-    Element should be visible  description
-    Element should be visible  width
-    Element should be visible  height
-    Element should be visible  url
-    Element should be visible  mimetype
+    Page should contain  Title
+    Page should contain  Description
+    Page should contain  Width
+    Page should contain  Height
+    Page should contain  URL
+    Page should contain  Mimetype
 
 
 *** Keywords ***
