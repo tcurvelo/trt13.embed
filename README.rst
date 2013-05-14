@@ -30,11 +30,16 @@ BUG's conhecidos
 ...
 
 
-Roadmap
-=======
+TODO
+====
+v0.1
+ ✔ Criar conteudo Video Embarcado @done (13-05-14 19:37)
+     ✔ Propriedades: title, description, width, height, mimetype, url @done (13-05-14 19:38)
+ ✔ Criar template básico para Vídeo Embarcado @done (13-05-14 19:41)
+ ☐ Um video pode conter videos alternativos dentro dele, os quais sobrescrevem algumas características do 'pai'
+ ☐ O template do video permite mudar a visão para alguma dos alternativos
+ ☐ Carregar alternativos via ajax
 
-* v0.1
-
-  * Tipo de conteudo `Video Embarcado`, para videos/streams externos
-  * `Video Embarcado` pode ter várias `alternativas` (ex: dimensoes/qualidades
-    diferentes) acessiveis por URL própria, ou alternando via AJAX.
+v0.2
+ ☐ Separa `URL` em `URL` e `parametros`
+ ☐ O que são as propriedades `pluginspage` e `designtimesp` de embed. São importantes?
