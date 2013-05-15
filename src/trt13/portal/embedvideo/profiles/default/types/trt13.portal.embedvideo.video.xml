@@ -10,13 +10,15 @@
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
- <property name="allowed_content_types" />
+ <property name="allowed_content_types">
+  <element value="trt13.portal.embedvideo.video" />
+ </property>
 
  <!-- schema interface -->
  <property name="schema">trt13.portal.embedvideo.content.video.IVideo</property>
 
  <!-- class used for content items -->
- <property name="klass">plone.dexterity.content.Container</property>
+ <property name="klass">trt13.portal.embedvideo.content.video.Video</property>
 
  <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>

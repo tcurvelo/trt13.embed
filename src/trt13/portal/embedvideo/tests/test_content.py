@@ -30,5 +30,31 @@ class TestContent(unittest.TestCase):
         )
         v1 = self.folder['motorhead']
         self.assertTrue(video.IVideo.providedBy(v1))
+        self.assertTrue(isinstance(v1, video.Video))
         self.assertEquals(u"Motörhead",  v1.title)
 
+    def test_adding_a_video_inside_another_and_acquisition(self):
+        api.content.create(
+            type='trt13.portal.embedvideo.video',
+            title=u"Audiência",
+            url="http://plone.org",
+            height=200,
+            width=200,
+            container=self.folder
+        )
+        video_pai = self.folder['audiencia']
+
+        api.content.create(
+            type='trt13.portal.embedvideo.video',
+            title=u"Qualidade Baixa",
+            height=50,
+            width=50,
+            container=video_pai
+        )
+        alternativo = video_pai['qualidade-baixa']
+        self.assertTrue(video.IVideo.providedBy(alternativo))
+        self.assertEquals(u"Qualidade Baixa",  alternativo.title)
+        self.assertEquals(50,  alternativo.height)
+        self.assertEquals(50,  alternativo.width)
+        # URL adquirida do pai
+        self.assertEquals("http://plone.org", alternativo.url)
