@@ -3,6 +3,7 @@ from plone.directives import dexterity
 from plone.directives import form
 from trt13.portal.embedvideo import embedvideoMessageFactory as _
 from zope import schema
+from plone import api
 
 
 class IVideo(form.Schema):
@@ -48,3 +49,20 @@ class Video(dexterity.Container):
 class View(grok.View):
     grok.context(IVideo)
     grok.require("zope2.View")
+
+    def alternatives(self):
+        if not hasattr(self, '__alternatives') or not self.__alternatives:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            folder_path = '/'.join(self.context.getPhysicalPath())
+
+            self.__alternatives = [
+                result.getObject()
+                for result in catalog.searchResults(
+                    path={'query': folder_path},
+                    portal_type='trt13.portal.embedvideo.video'
+                )
+                if result.getPath() != folder_path
+            ]
+
+        return self.__alternatives
+

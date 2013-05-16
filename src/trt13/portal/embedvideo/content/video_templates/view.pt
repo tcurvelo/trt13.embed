@@ -1,10 +1,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      lang="en"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="example.conference">
+      lang="en"
+      i18n:domain="trt13.portal.embedvideo">
+
 <body>
 
 <metal:main fill-slot="main">
@@ -26,47 +27,65 @@
             name="trt13_portal_embedvideo_player"
             standby="" width="" height="" type=""
 
-            tal:attributes="standby here/description;
-                            width here/width;
-                            height here/height;
-                            type here/mimetype;">
+            tal:attributes="standby context/description;
+                            width context/width;
+                            height context/height;
+                            type context/mimetype;">
 
-            <param name="URL" value=""
-                tal:attributes="value here/url">
+          <param name="URL" value=""
+                tal:attributes="value context/url">
 
-           <param name="AnimationAtStart" value="false">
-           <param name="AutoSize" value="0">
-           <param name="AutoStart" value="true">
-           <param name="ShowControls" value="true">
-           <param name="ShowDisplay" value="0">
-           <param name="ShowStatusBar" value="1">
-           <param name="StretchToFit" value="True">
-           <param name="TransparentAtStart" value="true">
+          <param name="AnimationAtStart" value="false">
+          <param name="AutoSize" value="0">
+          <param name="AutoStart" value="true">
+          <param name="ShowControls" value="true">
+          <param name="ShowDisplay" value="0">
+          <param name="ShowStatusBar" value="1">
+          <param name="StretchToFit" value="True">
+          <param name="TransparentAtStart" value="true">
 
-           <embed src="" type="" width="" height=""
-                tal:attributes="
-                    src here/url;
-                    width here/width;
-                    height here/height;
-                    type here/mimetype;"
+          <embed
+            id='trt13_portal_embedvideo_player_embed'
+            name='trt13_portal_embedvideo_player_embed'
 
-                id='trt13_portal_embedvideo_player_embed'
-                name='trt13_portal_embedvideo_player_embed'
-                autosize='0'
-                autostart='1'
-                bgcolor='darkblue'
-                displaysize='4'
-                loop='0'
-                showcontrols='1'
-                showdisplay='0'
-                showstatusbar='1'
-                showtracker='0'
-                StretchToFit='1'
-                videoborder3d='0'>
-            </embed>
+            tal:attributes="
+                src context/url;
+                width context/width;
+                height context/height;
+                type context/mimetype;"
+            src="" type="" width="" height=""
+            autosize='0'
+            autostart='1'
+            bgcolor='darkblue'
+            displaysize='4'
+            loop='0'
+            showcontrols='1'
+            showdisplay='0'
+            showstatusbar='1'
+            showtracker='0'
+            StretchToFit='1'
+            videoborder3d='0'>
+          </embed>
         </object>
 
+        <tal:alternatives tal:condition="view/alternatives">
+        <ul>
+          <li><a tal:attributes="href context/absolute_url"
+               disabled="disabled"
+               i18n:translate=""
+               href="">Default</a>
+          </li>
 
+          <tal:alternatives tal:repeat="alternative view/alternatives">
+          <li><a tal:content="alternative/title"
+                tal:attributes="href alternative/absolute_url">
+                Alternative Video
+              </a>
+          </li>
+          </tal:alternatives>
+
+        </ul>
+        </tal:alternatives>
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
