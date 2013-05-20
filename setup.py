@@ -36,6 +36,8 @@ setup(name='trt13.portal.embedvideo',
           'Plone>=4.2',
           'plone.api',
           'plone.app.dexterity[grok]',
+          'plone.namedfile[blobs]',
+          'plone.formwidget.namedfile',
       ],
       extras_require={
           'test': [
