@@ -22,8 +22,8 @@
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
+        <div id="trt13_portal_embedvideo_player">
         <object
-            id="trt13_portal_embedvideo_player"
             name="trt13_portal_embedvideo_player"
             standby="" width="" height="" type=""
 
@@ -34,7 +34,6 @@
 
           <param name="URL" value=""
                 tal:attributes="value context/url">
-
           <param name="AnimationAtStart" value="false">
           <param name="AutoSize" value="0">
           <param name="AutoStart" value="true">
@@ -67,9 +66,10 @@
             videoborder3d='0'>
           </embed>
         </object>
+        </div>
 
         <tal:alternatives tal:condition="view/alternatives">
-        <ul>
+        <ul id="trt13_portal_embedvideo_alternatives">
           <li><a tal:attributes="href context/absolute_url"
                disabled="disabled"
                i18n:translate=""
