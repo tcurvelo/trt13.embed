@@ -71,9 +71,10 @@
         <tal:alternatives tal:condition="view/alternatives">
         <ul id="trt13_portal_embedvideo_alternatives">
           <li><a tal:attributes="href context/absolute_url"
-               disabled="disabled"
                i18n:translate=""
-               href="">Default</a>
+               href=""
+               class="current"
+               >Default</a>
           </li>
 
           <tal:alternatives tal:repeat="alternative view/alternatives">
