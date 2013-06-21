@@ -33,11 +33,12 @@ setup(name='trt13.portal.embedvideo',
       install_requires=[
           'setuptools',
           'Pillow',
-          'Plone>=4.2',
+          'Plone==4.2.5',
           'plone.api',
           'plone.app.dexterity[grok]',
           'plone.namedfile[blobs]',
           'plone.formwidget.namedfile',
+          'collective.js.jqueryui==1.8.16.9',
       ],
       extras_require={
           'test': [
