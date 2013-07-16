@@ -12,13 +12,9 @@ $(function(){
             $('#trt13_portal_embedvideo_player').load(
                 this.href + "?ajax_load=true #trt13_portal_embedvideo_player object",
                 function(){
-                    $("ul#trt13_portal_embedvideo_alternatives li a.current").
-                        button("enable").removeClass("current");
-                    that.button("disable").addClass("current");;
+                    $("ul#trt13_portal_embedvideo_alternatives li.current").removeClass("current");
+                    that.parent("li").addClass("current");
                 }
             );
-
-        }).
-        button().
-        filter(".current").button("disable");
+        });
 });
