@@ -32,6 +32,7 @@ class IVideo(form.Schema):
 
     image_thumb = NamedBlobImage(
         title=_(u"Please upload an image"),
+        required=False
     )
 
     image_caption = schema.TextLine(
