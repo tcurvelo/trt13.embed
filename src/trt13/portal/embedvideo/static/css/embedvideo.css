@@ -21,4 +21,5 @@ ul#trt13_portal_embedvideo_alternatives li.current a{
 
 #trt13_portal_embedvideo_player{
     outline: 1px solid #777;
+    text-align: center;
 }
