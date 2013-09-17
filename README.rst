@@ -1,4 +1,4 @@
-trt13.portal.embedvideo
+trt13.portal.embed
 *********************************************************************
 
 Provê tipo de conteúdo para incluir Vídeos Embarcados (ex: *mms://*)
@@ -14,7 +14,7 @@ Para instalar, basta incluir o pacote no buildout do Plone::
     [buildout]
     ...
     eggs +=
-        trt13.portal.embedvideo
+        trt13.portal.embed
 
 
 Utilização

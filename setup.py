@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 version = '0.2'
 
-setup(name='trt13.portal.embedvideo',
+setup(name='trt13.portal.embed',
       version=version,
       description="Provê conteúdo para vídeos embarcados (ex: mms://)",
       long_description=open("README.rst").read() + "\n" + open(

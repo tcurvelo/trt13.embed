@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trt13.portal.embed\n"
+"POT-Creation-Date: 2013-07-29 19:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: trt13.portal.embed\n"
+
+#: ./profiles/default/types/trt13.portal.embed.video.xml
+msgid "An external embedded video"
+msgstr ""
+
+#: ./profiles/default/types/trt13.portal.embed.video.xml
+msgid "Embedded Video"
+msgstr ""
+
+#: ./content/video.py:14
+msgid "Height"
+msgstr ""
+
+#: ./content/video.py:29
+msgid "Mimetype"
+msgstr ""
+
+#: ./content/video.py:39
+msgid "Please inform a caption for the image"
+msgstr ""
+
+#: ./content/video.py:34
+msgid "Please upload an image"
+msgstr ""
+
+#: ./content/video.py:24
+msgid "URL"
+msgstr ""
+
+#: ./content/video.py:19
+msgid "Width"
+msgstr ""
+
+#. Default: "Default"
+#: ./content/video_templates/view.pt:28
+msgid "default"
+msgstr ""
+

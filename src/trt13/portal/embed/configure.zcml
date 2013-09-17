@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="trt13.portal.embed">
+
+    <includeDependencies package="." />
+
+    <i18n:registerTranslations directory="locales" />
+
+    <grok:grok package="." />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="trt13.portal.embed: Install"
+        directory="profiles/default"
+        description="trt13.portal.embed"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        i18n:attributes="title; description"
+        />
+
+    <genericsetup:importStep
+        name="trt13.portal.embed-upgrades"
+        title="trt13.portal.embed: Upgrades"
+        description="Run available upgrades for this package."
+        handler="trt13.portal.embed.setuphandlers.run_upgrades">
+    </genericsetup:importStep>
+
+    <include package=".upgrades" />
+
+</configure>
