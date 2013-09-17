@@ -42,50 +42,31 @@
           </ul>
         </tal:tabs>
 
-        <div id="trt13_portal_embedvideo_player">
+        <div id="trt13_portal_embedvideo">
+
         <object
-            name="trt13_portal_embedvideo_player"
+            id="trt13_portal_embedvideo_object"
             standby="" width="" height="" type=""
 
             tal:attributes="standby context/description;
+                            data context/url;
                             width context/width;
                             height context/height;
                             type context/mimetype;">
 
-          <param name="URL" value=""
-                tal:attributes="value context/url">
-          <param name="AnimationAtStart" value="false">
-          <param name="AutoSize" value="0">
-          <param name="AutoStart" value="true">
-          <param name="ShowControls" value="true">
-          <param name="ShowDisplay" value="0">
-          <param name="ShowStatusBar" value="1">
-          <param name="StretchToFit" value="True">
-          <param name="TransparentAtStart" value="true">
+            <embed
+                id='trt13_portal_embedvideo_embed'
 
-          <embed
-            id='trt13_portal_embedvideo_player_embed'
-            name='trt13_portal_embedvideo_player_embed'
+                tal:attributes="
+                    src context/url;
+                    width context/width;
+                    height context/height;
+                    type context/mimetype;"
+                src="" width="" height="" type="">
+            </embed>
 
-            tal:attributes="
-                src context/url;
-                width context/width;
-                height context/height;
-                type context/mimetype;"
-            src="" type="" width="" height=""
-            autosize='0'
-            autostart='1'
-            bgcolor='darkblue'
-            displaysize='4'
-            loop='0'
-            showcontrols='1'
-            showdisplay='0'
-            showstatusbar='1'
-            showtracker='0'
-            StretchToFit='1'
-            videoborder3d='0'>
-          </embed>
         </object>
+
         </div>
 
         <div tal:replace="structure provider:plone.belowcontentbody" />

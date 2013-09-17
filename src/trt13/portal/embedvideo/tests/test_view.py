@@ -54,20 +54,11 @@ class TestView(unittest.TestCase):
             request)
 
         self.assertIn(
-            """<object name="trt13_portal_embedvideo_player" standby="video com qualidade mais baixa" width="320" height="180" type="application/pdf">
+            """<object id="trt13_portal_embedvideo_object" standby="video com qualidade mais baixa" width="320" height="180" type="application/pdf" data="mms://localhost/video.wmv">
 
-          <param name="URL" value="mms://localhost/video.wmv">
-          <param name="AnimationAtStart" value="false">
-          <param name="AutoSize" value="0">
-          <param name="AutoStart" value="true">
-          <param name="ShowControls" value="true">
-          <param name="ShowDisplay" value="0">
-          <param name="ShowStatusBar" value="1">
-          <param name="StretchToFit" value="True">
-          <param name="TransparentAtStart" value="true">
+            <embed id="trt13_portal_embedvideo_embed" src="mms://localhost/video.wmv" width="320" height="180" type="application/pdf">
+            </embed>
 
-          <embed id="trt13_portal_embedvideo_player_embed" name="trt13_portal_embedvideo_player_embed" src="mms://localhost/video.wmv" type="application/pdf" width="320" height="180" autosize="0" autostart="1" bgcolor="darkblue" displaysize="4" loop="0" showcontrols="1" showdisplay="0" showstatusbar="1" showtracker="0" stretchtofit="1" videoborder3d="0">
-          </embed>
         </object>""",
             player()
         )
