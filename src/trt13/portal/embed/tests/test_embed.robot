@@ -1,6 +1,7 @@
 *** Settings ***
 Resource  plone/app/robotframework/selenium.robot
 Library   Remote  ${PLONE_URL}/RobotRemote
+Variables  trt13/portal/embed/tests/variables.py
 
 Test Setup     Open test browser
 Test Teardown  Close all browsers
@@ -31,14 +32,22 @@ Checa os campos do formulário de Conteudo Embarcado
 
 
 Conteudo Embarcado e Arquivo aparecem como adicionáveis em um embarcado
-    Criei um video embarcado
+    Criei um conteudo embarcado 'Video'
     Open Add New Menu
     Page should contain link  link=File
     Page should contain link  link=Conteudo Embarcado
     Page should not contain link  link=Page
 
 
-#É mostrado um thumbnail numa listagem contendo um Embarcado
+É mostrado uma miniatura numa listagem contendo um Embarcado
+    Criei um conteudo embarcado 'Video'
+    Click link  link=Edit
+    Choose File  form-widgets-image_thumb-input  ${PATH_TO_TEST_FILES}/../static/img/embed.png
+    Choose File  form-widgets-image_caption  Miniatura
+    Click Button  Save
+    Page Should Contain  Changes saved
+    Go to  ${PLONE_URL}/selectViewTemplate?templateId=folder_summary_view
+    Page should contain image  css=img[alt=Miniatura]
 
 
 #Conteudo Embarcado alternativo é carregado via ajax
@@ -51,12 +60,12 @@ Abre formulário de criação de conteudo embarcado
     Open Add New Menu
     Click link  trt13-portal-embed-embed
 
-Criei um video embarcado
+Criei um conteudo embarcado '${Title}'
     I'm logged in as a 'Site Administrator'
     Open Add New Menu
     Click link  link=Conteudo Embarcado
-    Input Text  form-widgets-IBasic-title  Video
-    Input Text  form-widgets-IBasic-description  Um video
+    Input Text  form-widgets-IBasic-title  ${Title}
+    Input Text  form-widgets-IBasic-description  Descricao de ${Title}
     Input Text  form.widgets.height  480
     Input Text  form.widgets.width  640
     Input Text  form.widgets.url  meu_video.flv
