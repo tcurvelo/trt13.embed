@@ -4,7 +4,7 @@ import unittest
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from trt13.portal.embed.content import video
+from trt13.portal.embed.content import embed
 from trt13.portal.embed.testing import TRT13_PORTAL_EMBED_INTEGRATION
 
 
@@ -24,11 +24,11 @@ class TestContent(unittest.TestCase):
 
     def test_adding(self):
         api.content.create(
-            type='trt13.portal.embed.video',
+            type='trt13.portal.embed.embed',
             title=u"Motörhead",
             container=self.folder
         )
-        v1 = self.folder['motorhead']
-        self.assertTrue(video.IVideo.providedBy(v1))
-        self.assertTrue(isinstance(v1, video.Video))
-        self.assertEquals(u"Motörhead",  v1.title)
+        e1 = self.folder['motorhead']
+        self.assertTrue(embed.IEmbed.providedBy(e1))
+        self.assertTrue(isinstance(e1, embed.Embed))
+        self.assertEquals(u"Motörhead",  e1.title)

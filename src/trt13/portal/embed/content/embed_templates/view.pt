@@ -28,13 +28,13 @@
               <a tal:attributes="href context/absolute_url"
                  i18n:translate="default"
                  href=""
-                 >Default</a>
+                 >Padrão</a>
             </li>
 
             <tal:alternatives tal:repeat="alternative view/alternatives">
             <li><a tal:content="alternative/title"
                   tal:attributes="href alternative/absolute_url">
-                  Alternative Video
+                  Conteudo Alternativo
                 </a>
             </li>
             </tal:alternatives>

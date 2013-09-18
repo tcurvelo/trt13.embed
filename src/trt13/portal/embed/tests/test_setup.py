@@ -29,4 +29,4 @@ class TestSetup(unittest.TestCase):
 
     def test_content_types_exist(self):
         types = api.portal.get_tool('portal_types')
-        self.assertIn('trt13.portal.embed.video', types.objectIds())
+        self.assertIn('trt13.portal.embed.embed', types.objectIds())

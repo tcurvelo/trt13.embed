@@ -8,13 +8,13 @@ Test Teardown  Close all browsers
 
 *** Test Cases ***
 
-Video Embarcado aparece como adicionável
+Conteudo Embarcado aparece como adicionável
     Given I'm logged in as a 'Site Administrator'
      When Open Add New Menu
-     Then Element should be visible  trt13-portal-embed-video
+     Then Element should be visible  trt13-portal-embed-embed
 
-Checa os campos do formulário de Video Embarcado
-    Abre formulário de criação de video
+Checa os campos do formulário de Conteudo Embarcado
+    Abre formulário de criação de conteudo embarcado
     Page should contain  Title
     Page should contain  Description
     Page should contain  Width
@@ -25,10 +25,10 @@ Checa os campos do formulário de Video Embarcado
 
 *** Keywords ***
 
-Abre formulário de criação de video
+Abre formulário de criação de conteudo embarcado
     I'm logged in as a 'Site Administrator'
     Open Add New Menu
-    Click link  trt13-portal-embed-video
+    Click link  trt13-portal-embed-embed
 
 
 I'm logged in as a '${ROLE}'

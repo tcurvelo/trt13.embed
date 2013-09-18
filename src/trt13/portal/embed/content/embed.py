@@ -7,8 +7,8 @@ from trt13.portal.embed import embedMessageFactory as _
 from zope import schema
 
 
-class IVideo(form.Schema):
-    """A embedded video"""
+class IEmbed(form.Schema):
+    """Um conteudo embarcado"""
 
     height = schema.Int(
         title=_(u"Height"),
@@ -41,20 +41,20 @@ class IVideo(form.Schema):
     )
 
 
-@form.default_value(field=IVideo['height'])
-@form.default_value(field=IVideo['width'])
-@form.default_value(field=IVideo['url'])
-@form.default_value(field=IVideo['mimetype'])
+@form.default_value(field=IEmbed['height'])
+@form.default_value(field=IEmbed['width'])
+@form.default_value(field=IEmbed['url'])
+@form.default_value(field=IEmbed['mimetype'])
 def defaultValue(data):
     context = data.context
-    if IVideo.providedBy(context):
+    if IEmbed.providedBy(context):
         return getattr(context, data.field.getName())
     else:
         return data.field.default
 
 
-class Video(dexterity.Container):
-    grok.implements(IVideo)
+class Embed(dexterity.Container):
+    grok.implements(IEmbed)
 
     def tag(self, scale, css_class):
         if self.image_thumb:
@@ -76,7 +76,7 @@ class Video(dexterity.Container):
 
 
 class View(grok.View):
-    grok.context(IVideo)
+    grok.context(IEmbed)
     grok.require("zope2.View")
 
     def alternatives(self):
@@ -88,7 +88,7 @@ class View(grok.View):
                 result.getObject()
                 for result in catalog.searchResults(
                     path={'query': folder_path},
-                    portal_type='trt13.portal.embed.video'
+                    portal_type='trt13.portal.embed.embed'
                 )
                 if result.getPath() != folder_path
             ]

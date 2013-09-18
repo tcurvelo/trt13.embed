@@ -22,14 +22,14 @@ class TestView(unittest.TestCase):
         self.folder = self.portal['test-folder']
 
         api.content.create(
-            type='trt13.portal.embed.video',
+            type='trt13.portal.embed.embed',
             title=u"Audiencia",
             container=self.folder
         )
         self.video = self.folder['audiencia']
 
         api.content.create(
-            type='trt13.portal.embed.video',
+            type='trt13.portal.embed.embed',
             title=u"Qualidade Baixa",
             container=self.video
         )

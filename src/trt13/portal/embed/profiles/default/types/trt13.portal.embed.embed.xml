@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
-<object name="trt13.portal.embed.video"
+<object name="trt13.portal.embed.embed"
     meta_type="Dexterity FTI"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="trt13.portal.embed">
 
   <!-- Basic metadata -->
- <property name="title" i18n:translate="">Embedded Video</property>
- <property name="description" i18n:translate="">An external embedded video</property>
+ <property name="title" i18n:translate="">Conteudo Embarcado</property>
+ <property name="description" i18n:translate="">Um conteudo embarcado</property>
  <property name="content_icon">user.gif</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
-  <element value="trt13.portal.embed.video" />
+  <element value="trt13.portal.embed.embed" />
  </property>
 
  <!-- schema interface -->
- <property name="schema">trt13.portal.embed.content.video.IVideo</property>
+ <property name="schema">trt13.portal.embed.content.embed.IEmbed</property>
 
  <!-- class used for content items -->
- <property name="klass">trt13.portal.embed.content.video.Video</property>
+ <property name="klass">trt13.portal.embed.content.embed.Embed</property>
 
  <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>
