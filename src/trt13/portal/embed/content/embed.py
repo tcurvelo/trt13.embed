@@ -12,22 +12,18 @@ class IEmbed(form.Schema):
 
     height = schema.Int(
         title=_(u"Height"),
-        required=False
     )
 
     width = schema.Int(
         title=_(u"Width"),
-        required=False
     )
 
     url = schema.TextLine(
         title=_(u"URL"),
-        required=False
     )
 
     mimetype = schema.TextLine(
         title=_(u"Mimetype"),
-        required=False
     )
 
     image_thumb = NamedBlobImage(
