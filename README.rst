@@ -1,13 +1,17 @@
 trt13.portal.embed
-*********************************************************************
+************************************************************************
 
-Provê tipo de conteúdo para incluir Vídeos Embarcados (ex: *mms://*)
-em um site Plone. Um vídeo pode conter alternativas (ex: qualidade alta, baixa,
-camera 02, apenas audio, etc) representada por parâmetros diferentes.
+Provê o tipo de conteúdo *Conteúdo Embacardo*, que permite incluir
+streams, applets e videos flash e conteúdo embarcados via ``<object />``
+ou ``<embed />``. O itens a serem embarcados pode ser externos ao site
+(ex: um stream via *mms://*) ou internos (ex: arquivo *.swf*).
+Adicionalmente, um **Conteúdo Embacardo** pode conter "versões
+alternativas" (ex: qualidade alta, baixa, câmera 2, apenas audio, etc.)
+representada por outra instância do tipo, com parâmetros diferentes.
 
 
 Instalação e configuração
-===================
+=========================
 
 Para instalar, basta incluir o pacote no buildout do Plone::
 
@@ -15,44 +19,30 @@ Para instalar, basta incluir o pacote no buildout do Plone::
     ...
     eggs +=
         trt13.portal.embed
+    ...
+    [sources]
+    trt13.portal.embed = git https://bitbucket.org/trt13paraiba/trt13.portal.embed.git
 
 
 Utilização
-===================
+==========
 
-Em breve...
+* Adicione um **Conteúdo Embacardo** normalmente, através do menu
+  *Adicionar Item*
 
+* Informe título, Descrição, URL, Altura, Largura e mimetype do
+  conteúdo que você deseja embarcar.
 
-TODO
-===================
+* Dentro de um item é possível adicionar outros como ele: como "versões
+  alternativas". Na criação do item interno, as propriedades do item
+  superior serão sugeridas como valores padrão, mas é permitido
+  variá-las (ex: mudar a URL).
 
-v0.1
+  * Na visualização de um **Conteúdo Embarcado** as alternativas serão
+    apresentados links, e seus dados carregados via javascript.
 
- ✔ Criar conteudo Video Embarcado @done (13-05-14 19:37)
-
-     ✔ Propriedades: title, description, width, height, mimetype, url @done (13-05-14 19:38)
-
- ✔ Criar template básico para Vídeo Embarcado @done (13-05-14 19:41)
-
- ✔ Um video pode conter videos alternativos dentro dele @done (13-05-15 11:01)
-
- ✔ Os videos alternativos devem pegar a propriedades de seus pais e permitir sobrescrita @done (13-05-16 16:08)
-
-     ✔ Utiliza *default_value* sugerir  valores dos pais na criação @done (13-05-16 16:08)
-
- ✔ O template do video lista os videos alternativos e os linka @done (13-05-20 10:52)
-
- ✔ Carregar alternativos via ajax @done (13-06-19 18:50)
-
- ☐ Deixar a visao **apresentável** (aka. bells & whistles™)
+* É possível também adicionar arquivos dentro de um conteúdo embarcado
+  e referênciá-lo na propriedade URL deste (pode-se usar endereço
+  relativo).
 
 
-v0.2
-
- ☐ Como tornar parametros obrigatorios apenas se não houver um video pai?
-
- ☐ Utilizar Aquisição ao invés de *default_value* (eg. implementar *__getattr__* em Video)
-
- ☐ Separa *URL* em *URL* e *parametros*
-
- ☐ O que são as propriedades *pluginspage* e *designtimesp* de embed. São importantes?
