@@ -7,7 +7,7 @@
   <!-- Basic metadata -->
  <property name="title" i18n:translate="">Conteudo Embarcado</property>
  <property name="description" i18n:translate="">Um conteudo embarcado</property>
- <property name="content_icon">user.gif</property>
+ <property name="content_icon">++resource++trt13.portal.embed/img/embed.png</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
