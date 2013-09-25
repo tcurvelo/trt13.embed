@@ -26,6 +26,13 @@ class IEmbed(form.Schema):
         title=_(u"Mimetype"),
     )
 
+    parameters = schema.List(
+        title=_(u"Parameters"),
+        description=_(u"Please inform the parameters, one per line, in the format 'name|value'"),
+        value_type = schema.TextLine(),
+        required=False
+    )
+
     image_thumb = NamedBlobImage(
         title=_(u"Please upload an image"),
         required=False
@@ -33,7 +40,7 @@ class IEmbed(form.Schema):
 
     image_caption = schema.TextLine(
         title=_(u"Please inform a caption for the image"),
-        required=False,
+        required=False
     )
 
 
@@ -41,6 +48,7 @@ class IEmbed(form.Schema):
 @form.default_value(field=IEmbed['width'])
 @form.default_value(field=IEmbed['url'])
 @form.default_value(field=IEmbed['mimetype'])
+@form.default_value(field=IEmbed['parameters'])
 def defaultValue(data):
     context = data.context
     if IEmbed.providedBy(context):
@@ -70,6 +78,17 @@ class Embed(dexterity.Container):
         else:
             return
 
+    def get_parameters(self):
+        params = []
+        if self.parameters:
+            for param_line in self.parameters:
+                param = param_line.split('|', 1)
+                params.append({
+                    "name" : param[0],
+                    "value": param[1] if len(param)>1 else param[0]
+                })
+        return params
+
 
 class View(grok.View):
     grok.context(IEmbed)
@@ -89,4 +108,26 @@ class View(grok.View):
                 if result.getPath() != folder_path
             ]
         return self.__alternatives
+
+    def embed_tag(self):
+
+        parameters_as_atributtes = " ".join(
+            '%s="%s"' % (item["name"], item["value"])
+            for item in self.context.get_parameters()
+        )
+
+        return """<embed id="trt13_portal_embed_embed"
+                src="%s"
+                width="%s" height="%s"
+                type="%s"
+                %s>
+            </embed>""" % (
+            self.context.url,
+            self.context.width,
+            self.context.height,
+            self.context.mimetype,
+            parameters_as_atributtes
+        )
+
+
 

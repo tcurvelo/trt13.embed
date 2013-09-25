@@ -44,6 +44,7 @@ class TestView(unittest.TestCase):
         baixa.height = 180
         baixa.width = 320
         baixa.mimetype = "application/pdf"
+        baixa.parameters = ["foo|bar"]
 
         request = self.layer['request']
         request["QUERY_STRING"] = "ajax_load=true"
@@ -56,7 +57,13 @@ class TestView(unittest.TestCase):
         self.assertIn(
             """<object id="trt13_portal_embed_object" standby="video com qualidade mais baixa" width="320" height="180" type="application/pdf" data="mms://localhost/video.wmv">
 
-            <embed id="trt13_portal_embed_embed" src="mms://localhost/video.wmv" width="320" height="180" type="application/pdf">
+            <param name="foo" value="bar" />
+
+            <embed id="trt13_portal_embed_embed"
+                src="mms://localhost/video.wmv"
+                width="320" height="180"
+                type="application/pdf"
+                foo="bar">
             </embed>
 
         </object>""",

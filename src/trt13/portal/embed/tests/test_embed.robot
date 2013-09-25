@@ -23,6 +23,7 @@ Checa os campos do formulário de Conteudo Embarcado
     Page should contain  Width
     Page should contain  URL
     Page should contain  Mimetype
+    Page should contain  Parameters
     Page should contain  Please upload an image
     Page should contain  Please inform a caption for the image
     Element should be visible  css=#formfield-form-widgets-width>label>span.required

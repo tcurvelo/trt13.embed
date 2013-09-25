@@ -1,53 +1,61 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: trt13.portal.embed\n"
-"POT-Creation-Date: 2013-07-29 19:44+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-09-25 17:34+0000\n"
+"PO-Revision-Date: 2013-09-25 14:35 -0300\n"
+"Last-Translator: Thiago Curvelo <tcurvelo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: pt-br\n"
+"Language-Name: Brazilian Portuguese\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: trt13.portal.embed\n"
 
-#: ./profiles/default/types/trt13.portal.embed.video.xml
-msgid "An external embedded video"
-msgstr "Um vídeo externo embarcado"
+#: ./profiles/default/types/trt13.portal.embed.embed.xml
+msgid "Conteudo Embarcado"
+msgstr "Conteudo Embarcado"
 
-#: ./profiles/default/types/trt13.portal.embed.video.xml
-msgid "Embedded Video"
-msgstr "Vídeo Embarcado"
-
-#: ./content/video.py:14
+#: ./content/embed.py:14
 msgid "Height"
 msgstr "Altura"
 
-#: ./content/video.py:29
+#: ./content/embed.py:26
 msgid "Mimetype"
 msgstr ""
 
-#: ./content/video.py:39
+#: ./content/embed.py:30
+msgid "Parameters"
+msgstr "Parâmetros"
+
+#: ./content/embed.py:42
 msgid "Please inform a caption for the image"
 msgstr "Por favor, informe uma legenda para a imagem"
 
-#: ./content/video.py:34
+#: ./content/embed.py:31
+msgid "Please inform the parameters, one per line, in the format 'name|value'"
+msgstr "Por favor informe os parâmetros, um em cada linha, no formato "nome|valor""
+
+#: ./content/embed.py:37
 msgid "Please upload an image"
 msgstr "Por favor, escolha uma imagem"
 
-#: ./content/video.py:24
+#: ./content/embed.py:22
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
-#: ./content/video.py:19
+#: ./profiles/default/types/trt13.portal.embed.embed.xml
+msgid "Um conteudo embarcado"
+msgstr "Um conteudo embarcado"
+
+#: ./content/embed.py:18
 msgid "Width"
 msgstr "Largura"
 
-#. Default: "Default"
-#: ./content/video_templates/view.pt:28
+#. Default: "Padrão"
+#: ./content/embed_templates/view.pt:28
 #, fuzzy
 msgid "default"
 msgstr "Padrão"

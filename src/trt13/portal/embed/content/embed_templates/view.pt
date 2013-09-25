@@ -54,16 +54,10 @@
                             height context/height;
                             type context/mimetype;">
 
-            <embed
-                id='trt13_portal_embed_embed'
+            <tal:params define="params context/get_parameters" condition="params"><param tal:repeat="param context/get_parameters" name="" value=""
+              tal:attributes="name param/name; value param/value;" /></tal:params>
 
-                tal:attributes="
-                    src context/url;
-                    width context/width;
-                    height context/height;
-                    type context/mimetype;"
-                src="" width="" height="" type="">
-            </embed>
+            <tal:embed_tag replace="structure view/embed_tag" />
 
         </object>
 
