@@ -16,7 +16,7 @@ msgstr ""
 
 #: ./profiles/default/types/trt13.portal.embed.embed.xml
 msgid "Conteudo Embarcado"
-msgstr "Conteudo Embarcado"
+msgstr "Conteúdo Embarcado"
 
 #: ./content/embed.py:14
 msgid "Height"
@@ -36,7 +36,7 @@ msgstr "Por favor, informe uma legenda para a imagem"
 
 #: ./content/embed.py:31
 msgid "Please inform the parameters, one per line, in the format 'name|value'"
-msgstr "Por favor informe os parâmetros, um em cada linha, no formato "nome|valor""
+msgstr "Por favor informe os parâmetros, um em cada linha, no formato \"nome|valor\""
 
 #: ./content/embed.py:37
 msgid "Please upload an image"
@@ -48,7 +48,7 @@ msgstr "URL"
 
 #: ./profiles/default/types/trt13.portal.embed.embed.xml
 msgid "Um conteudo embarcado"
-msgstr "Um conteudo embarcado"
+msgstr "Um conteúdo embarcado"
 
 #: ./content/embed.py:18
 msgid "Width"
@@ -56,7 +56,5 @@ msgstr "Largura"
 
 #. Default: "Padrão"
 #: ./content/embed_templates/view.pt:28
-#, fuzzy
 msgid "default"
 msgstr "Padrão"
-
