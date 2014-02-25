@@ -2,11 +2,11 @@
 import os
 from setuptools import setup, find_packages
 
-version = '0.2'
+version = '0.3'
 
 setup(name='trt13.embed',
       version=version,
-      description="Provê conteúdo para vídeos embarcados (ex: mms://)",
+      description="Provê tipo para conteúdos embarcados",
       long_description=open("README.rst").read() + "\n" + open(
           os.path.join("docs", "HISTORY.txt")
       ).read(),
