@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 version = '0.2'
 
-setup(name='trt13.portal.embed',
+setup(name='trt13.embed',
       version=version,
       description="Provê conteúdo para vídeos embarcados (ex: mms://)",
       long_description=open("README.rst").read() + "\n" + open(
@@ -25,9 +25,8 @@ setup(name='trt13.portal.embed',
       author_email='tcurvelo@gmail.com',
       url='http://www.trt13.jus.br',
       license='gpl',
-      packages=find_packages('src'),
-      package_dir={'': 'src'},
-      namespace_packages=['trt13', 'trt13.portal'],
+      namespace_packages=['trt13'],
+      packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
       install_requires=[

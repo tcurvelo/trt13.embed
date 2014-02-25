@@ -1,12 +1,13 @@
-trt13.portal.embed
+trt13.embed
 ************************************************************************
 
-Provê o tipo de conteúdo *Conteúdo Embacardo*, que permite incluir
-streams, applets e videos flash e conteúdo embarcados via ``<object />``
-ou ``<embed />``. O itens a serem embarcados pode ser externos ao site
-(ex: um stream via *mms://*) ou internos (ex: arquivo *.swf*).
-Adicionalmente, um **Conteúdo Embacardo** pode conter "versões
-alternativas" (ex: qualidade alta, baixa, câmera 2, apenas audio, etc.)
+Provê o tipo de conteúdo **Conteúdo Embacardo** para o Plone, que
+permite incluir *streams*, *applets*, animações e outros conteúdos
+através das tags ``<object />`` ou ``<embed />``.
+Os itens a serem embarcados pode ser externos ao site (ex: um *stream*
+via ``mms://``) ou internos (ex: arquivo ``.swf``).
+Adicionalmente, um *Conteúdo Embacardo* pode conter "versões
+alternativas" (ex: qualidade alta, baixa, câmera #2, apenas áudio, etc.)
 representada por outra instância do tipo, com parâmetros diferentes.
 
 
@@ -18,10 +19,10 @@ Para instalar, basta incluir o pacote no buildout do Plone::
     [buildout]
     ...
     eggs +=
-        trt13.portal.embed
+        trt13.embed
     ...
     [sources]
-    trt13.portal.embed = git https://bitbucket.org/trt13paraiba/trt13.portal.embed.git
+    trt13.embed = git https://github.com/tcurvelo/trt13.embed.git
 
 
 Utilização
@@ -44,5 +45,3 @@ Utilização
 * É possível também adicionar arquivos dentro de um conteúdo embarcado
   e referênciá-lo na propriedade URL deste (pode-se usar endereço
   relativo).
-
-

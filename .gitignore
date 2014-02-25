@@ -6,16 +6,13 @@
 *~
 
 .codeintel/
-.hg/
 .settings/
 bin/
 develop-eggs/
+include/
+lib/
+local/
 parts/
-py2.6/
-py2.7/
-py26/
-py27/
 var/
 
-.hgignore
 .installed.cfg

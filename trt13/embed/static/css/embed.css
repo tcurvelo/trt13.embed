@@ -1,0 +1,25 @@
+ul#trt13_embed_alternatives{
+    margin: 4px 0px 4px 0px;
+}
+
+ul#trt13_embed_alternatives li{
+    background-color: #fff;
+    border-radius: 4px 4px 0px 0px;
+    border: 1px solid #777;
+    display: inline;
+    padding: 4px;
+}
+
+ul#trt13_embed_alternatives li.current{
+    background-color: #ccc;
+}
+
+ul#trt13_embed_alternatives li.current a{
+    cursor: default;
+    pointer-events: none;
+}
+
+#trt13_embed_player{
+    outline: 1px solid #777;
+    text-align: center;
+}

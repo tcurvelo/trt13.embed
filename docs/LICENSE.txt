@@ -1,4 +1,4 @@
-trt13.portal.embed Copyright 2012, TRT 13ª Região
+trt13.embed Copyright 2012, TRT 13ª Região
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
