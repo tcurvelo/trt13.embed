@@ -18,7 +18,7 @@ Conteudo Embarcado aparece como adicionável
 Checa os campos do formulário de Conteudo Embarcado
     Abre formulário de criação de conteudo embarcado
     Page should contain  Title
-    Page should contain  Description
+    Page should contain  Summary
     Page should contain  Height
     Page should contain  Width
     Page should contain  URL
