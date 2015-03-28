@@ -32,16 +32,16 @@ setup(name='trt13.embed',
       install_requires=[
           'setuptools',
           'Pillow',
-          'Plone==4.2.5',
+          'Products.CMFPlone',
           'plone.api',
           'plone.app.dexterity[grok]',
           'plone.namedfile[blobs]',
           'plone.formwidget.namedfile',
-          'collective.js.jqueryui==1.8.16.9',
+          'collective.js.jqueryui',
       ],
       extras_require={
           'test': [
-              'plone.app.testing',
+              'plone.app.testing [robot]',
               'plone.app.robotframework',
           ]
       },
