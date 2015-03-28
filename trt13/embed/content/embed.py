@@ -28,8 +28,9 @@ class IEmbed(form.Schema):
 
     parameters = schema.List(
         title=_(u"Parameters"),
-        description=_(u"Please inform the parameters, one per line, in the format 'name|value'"),
-        value_type = schema.TextLine(),
+        description=_(u"Please inform the parameters, one per line, in the"
+                      u"format 'name|value'"),
+        value_type=schema.TextLine(),
         required=False
     )
 
@@ -84,8 +85,8 @@ class Embed(dexterity.Container):
             for param_line in self.parameters:
                 param = param_line.split('|', 1)
                 params.append({
-                    "name" : param[0],
-                    "value": param[1] if len(param)>1 else param[0]
+                    "name": param[0],
+                    "value": param[1] if len(param) > 1 else param[0]
                 })
         return params
 
@@ -128,6 +129,3 @@ class View(grok.View):
             self.context.mimetype,
             parameters_as_atributtes
         )
-
-
-
