@@ -64,18 +64,12 @@ class Embed(dexterity.Container):
     def tag(self, scale, css_class):
         if self.image_thumb:
             return """
-                <a href="%s">
-                    <img src="%s/@@images/image_thumb" alt="%s" title="%s"
-                        class="%s"
+                <a href="{0}">
+                    <img src="{0}/@@images/image_thumb" alt="{1}" title="{1}"
+                        class="{2}"
                         height="84" width="128"/>
                 </a>
-            """ % (
-                self.absolute_url(),
-                self.absolute_url(),
-                self.image_caption,
-                self.image_caption,
-                css_class
-            )
+            """.format(self.absolute_url(), self.image_caption, css_class)
         else:
             return
 

@@ -8,19 +8,9 @@
 
 <body>
 
-<metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main"
-        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+<metal:content-core fill-slot="content-core">
+  <tal:block metal:define-macro="content-core">
 
-        <div tal:replace="structure provider:plone.abovecontenttitle" />
-
-        <h1 class="documentFirstHeading" tal:content="context/title" />
-
-        <div tal:replace="structure provider:plone.belowcontenttitle" />
-
-        <p class="documentDescription" tal:content="context/description" />
-
-        <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <tal:tabs tal:condition="view/alternatives">
           <ul id="trt13_embed_alternatives">
@@ -65,8 +55,8 @@
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
-    </tal:main-macro>
-</metal:main>
+    </tal:block>
+</metal:content-core>
 
 </body>
 </html>
