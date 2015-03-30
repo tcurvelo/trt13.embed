@@ -2,7 +2,6 @@ from five import grok
 from plone import api
 from plone.directives import dexterity
 from plone.directives import form
-from plone.namedfile.field import NamedBlobImage
 from trt13.embed import embedMessageFactory as _
 from zope import schema
 
@@ -31,16 +30,6 @@ class IEmbed(form.Schema):
         description=_(u"Please inform the parameters, one per line, in the"
                       u"format 'name|value'"),
         value_type=schema.TextLine(),
-        required=False
-    )
-
-    image_thumb = NamedBlobImage(
-        title=_(u"Please upload an image"),
-        required=False
-    )
-
-    image_caption = schema.TextLine(
-        title=_(u"Please inform a caption for the image"),
         required=False
     )
 

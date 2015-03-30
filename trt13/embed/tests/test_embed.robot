@@ -24,8 +24,7 @@ Checa os campos do formulário de Conteudo Embarcado
     Page should contain  URL
     Page should contain  Mimetype
     Page should contain  Parameters
-    Page should contain  Please upload an image
-    Page should contain  Please inform a caption for the image
+    Page should contain  Lead Image Caption
     Element should be visible  css=#formfield-form-widgets-width>label>span.required
     Element should be visible  css=#formfield-form-widgets-height>label>span.required
     Element should be visible  css=#formfield-form-widgets-url>label>span.required
@@ -43,8 +42,8 @@ Conteudo Embarcado e Arquivo aparecem como adicionáveis em um embarcado
 É mostrado uma miniatura numa listagem contendo um Embarcado
     Criei um conteudo embarcado 'Video'
     Click link  link=Edit
-    Choose File  id=form-widgets-image_thumb-input  ${PKG_ROOT}/static/img/embed.png
-    Input Text  form-widgets-image_caption  Miniatura
+    Choose File  id=form-widgets-ILeadImage-image-input  ${PKG_ROOT}/static/img/embed.png
+    Input Text  form-widgets-ILeadImage-image_caption  Miniatura
     Click Button  Save
     Page Should Contain  Changes saved
     Go to  ${PLONE_URL}/selectViewTemplate?templateId=folder_summary_view
