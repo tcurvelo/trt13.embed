@@ -9,10 +9,12 @@
 .settings/
 bin/
 develop-eggs/
+htmlcov/
 include/
 lib/
 local/
 parts/
 var/
 
+.coverage
 .installed.cfg
