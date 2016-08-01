@@ -24,24 +24,24 @@ class TestContent(unittest.TestCase):
 
     def test_adding(self):
         api.content.create(
-            type='trt13.embed.embed',
-            title=u"Motörhead",
+            type='trt13.embed',
+            title=u'Motörhead',
             container=self.folder
         )
         e1 = self.folder['motorhead']
         self.assertTrue(embed.IEmbed.providedBy(e1))
         self.assertTrue(isinstance(e1, embed.Embed))
-        self.assertEquals(u"Motörhead",  e1.title)
+        self.assertEquals(u'Motörhead', e1.title)
 
     def test_parameters(self):
         api.content.create(
-            type='trt13.embed.embed',
-            title=u"Video",
+            type='trt13.embed',
+            title=u'Video',
             container=self.folder
         )
 
         video = self.folder['video']
-        video.parameters = ["foo1|bar1", "foo2|bar2"]
+        video.parameters = ['foo1|bar1', 'foo2|bar2']
 
         self.assertEquals(
             video.get_parameters(), [

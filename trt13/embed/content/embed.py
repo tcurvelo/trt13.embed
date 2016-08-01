@@ -107,16 +107,16 @@ class View(grok.View):
     def embed_tag(self):
 
         parameters_as_atributtes = " ".join(
-            '%s="%s"' % (item["name"], item["value"])
+            '{}="{}"'.format(item["name"], item["value"])
             for item in self.context.get_parameters()
         )
 
-        return """<embed id="trt13_embed_embed"
-                src="%s"
-                width="%s" height="%s"
-                type="%s"
-                %s>
-            </embed>""" % (
+        return """<embed class="trt13_embed"
+                src="{}"
+                width="{}" height="{}"
+                type="{}"
+                {}>
+            </embed>""".format(
             self.context.url,
             self.context.width,
             self.context.height,

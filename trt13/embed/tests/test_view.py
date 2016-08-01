@@ -14,22 +14,20 @@ class TestView(unittest.TestCase):
         self.portal = api.portal.get()
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
-        api.content.create(
+        self.folder = api.content.create(
             type='Folder',
             title='test-folder',
             container=self.portal
         )
-        self.folder = self.portal['test-folder']
 
-        api.content.create(
-            type='trt13.embed.embed',
+        self.video = api.content.create(
+            type='trt13.embed',
             title=u"Audiencia",
             container=self.folder
         )
-        self.video = self.folder['audiencia']
 
         api.content.create(
-            type='trt13.embed.embed',
+            type='trt13.embed',
             title=u"Qualidade Baixa",
             container=self.video
         )
@@ -55,11 +53,14 @@ class TestView(unittest.TestCase):
             request)
 
         self.assertIn(
-            """<object id="trt13_embed_object" standby="video com qualidade mais baixa" width="320" height="180" type="application/pdf" data="mms://localhost/video.wmv">
+            '<object class="trt13_embed_object" standby="video com qualidade '
+            'mais baixa" width="320" height="180" type="application/pdf" '
+            'data="mms://localhost/video.wmv">'
+            """
 
             <param name="foo" value="bar" />
 
-            <embed id="trt13_embed_embed"
+            <embed class="trt13_embed"
                 src="mms://localhost/video.wmv"
                 width="320" height="180"
                 type="application/pdf"

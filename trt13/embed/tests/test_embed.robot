@@ -12,7 +12,7 @@ Test Teardown  Close all browsers
 Conteudo Embarcado aparece como adicionável
     I'm logged in as a 'Site Administrator'
     Open Add New Menu
-    Element should be visible  trt13-embed-embed
+    Element should be visible  trt13-embed
 
 
 Checa os campos do formulário de Conteudo Embarcado
@@ -43,8 +43,8 @@ Conteudo Embarcado e Arquivo aparecem como adicionáveis em um embarcado
 É mostrado uma miniatura numa listagem contendo um Embarcado
     Criei um conteudo embarcado 'Video'
     Click link  link=Edit
-    Choose File  form-widgets-image_thumb-input  ${PATH_TO_TEST_FILES}/../static/img/embed.png
-    Choose File  form-widgets-image_caption  Miniatura
+    Choose File  id=form-widgets-image_thumb-input  ${PKG_ROOT}/static/img/embed.png
+    Input Text  form-widgets-image_caption  Miniatura
     Click Button  Save
     Page Should Contain  Changes saved
     Go to  ${PLONE_URL}/selectViewTemplate?templateId=folder_summary_view
@@ -59,7 +59,7 @@ Conteudo Embarcado e Arquivo aparecem como adicionáveis em um embarcado
 Abre formulário de criação de conteudo embarcado
     I'm logged in as a 'Site Administrator'
     Open Add New Menu
-    Click link  trt13-embed-embed
+    Click link  trt13-embed
 
 Criei um conteudo embarcado '${Title}'
     I'm logged in as a 'Site Administrator'

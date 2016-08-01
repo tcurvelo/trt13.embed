@@ -13,7 +13,7 @@
 
 
         <tal:tabs tal:condition="view/alternatives">
-          <ul id="trt13_embed_alternatives">
+          <ul class="trt13_embed_alternatives">
             <li class="current">
               <a tal:attributes="href context/absolute_url"
                  i18n:translate="default"
@@ -32,10 +32,10 @@
           </ul>
         </tal:tabs>
 
-        <div id="trt13_embed">
+        <div class="trt13_embed">
 
         <object
-            id="trt13_embed_object"
+            class="trt13_embed_object"
             standby="" width="" height="" type=""
 
             tal:attributes="standby context/description|nothing;
