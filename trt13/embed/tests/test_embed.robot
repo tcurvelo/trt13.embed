@@ -43,27 +43,16 @@ Conteudo Embarcado e Arquivo aparecem como adicionáveis em um embarcado
     Criei um conteudo embarcado 'Video'
     Click link  link=Edit
     Choose File  id=form-widgets-ILeadImage-image-input  ${PKG_ROOT}/static/img/embed.png
-    Input Text  form-widgets-ILeadImage-image_caption  Miniatura
     Click Button  Save
     Page Should Contain  Changes saved
-    Go to  ${PLONE_URL}/selectViewTemplate?templateId=folder_summary_view
-    Page should contain image  css=img[alt=Miniatura]
-
-
-#Conteudo Embarcado alternativo é carregado via ajax
+    Go to  ${PLONE_URL}/selectViewTemplate?templateId=summary_view
+    Page should contain image  css=img[alt=Video]
 
 
 *** Keywords ***
 
-Abre formulário de criação de conteudo embarcado
-    I'm logged in as a 'Site Administrator'
-    Open Add New Menu
-    Click link  trt13-embed
-
 Criei um conteudo embarcado '${Title}'
-    I'm logged in as a 'Site Administrator'
-    Open Add New Menu
-    Click link  link=Conteudo Embarcado
+    Abre formulário de criação de conteudo embarcado
     Input Text  form-widgets-IBasic-title  ${Title}
     Input Text  form-widgets-IBasic-description  Descricao de ${Title}
     Input Text  form.widgets.height  480
@@ -73,6 +62,10 @@ Criei um conteudo embarcado '${Title}'
     Click Button  Save
     Page Should Contain  Item created
 
+Abre formulário de criação de conteudo embarcado
+    I'm logged in as a 'Site Administrator'
+    Open Add New Menu
+    Click link  link=Conteudo Embarcado
 
 I'm logged in as a '${ROLE}'
     Enable autologin as  ${ROLE}

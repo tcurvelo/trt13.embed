@@ -50,18 +50,6 @@ def defaultValue(data):
 class Embed(dexterity.Container):
     grok.implements(IEmbed)
 
-    def tag(self, scale, css_class):
-        if self.image_thumb:
-            return """
-                <a href="{0}">
-                    <img src="{0}/@@images/image_thumb" alt="{1}" title="{1}"
-                        class="{2}"
-                        height="84" width="128"/>
-                </a>
-            """.format(self.absolute_url(), self.image_caption, css_class)
-        else:
-            return
-
     def get_parameters(self):
         params = []
         if self.parameters:
