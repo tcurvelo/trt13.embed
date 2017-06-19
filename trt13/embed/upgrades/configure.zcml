@@ -9,10 +9,10 @@
     <genericsetup:upgradeStep
         title="Upgrade for trt13.embed"
         description="Initial install"
-        source="0.0"
-        destination="1000"
+        source="2000"
+        destination="2001"
         sortkey="1"
-        handler="trt13.embed.upgrades.to1000.fromZero"
+        handler="trt13.embed.upgrades.to2001.from2000"
         profile="trt13.embed:default" />
 
 </configure>

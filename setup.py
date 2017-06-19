@@ -2,7 +2,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '0.3'
+version = '1.0'
 
 setup(name='trt13.embed',
       version=version,
